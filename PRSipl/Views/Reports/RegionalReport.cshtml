@@ -1,0 +1,9 @@
+﻿@{
+    var myChart = new Chart(width: 600, height: 400)
+        .AddTitle(ViewBag.regionname)
+        .AddSeries(
+            name: "Employee",
+            xValue: new[] { "0%", "10%", "50%", "70%", "90%", "100%", "110%", "120%" },
+            yValues: ViewBag.values)
+        .Write();
+}

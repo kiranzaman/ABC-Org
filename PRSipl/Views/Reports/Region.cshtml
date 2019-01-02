@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PRSipl.Models.Datum>
+
+@{
+    ViewBag.Title = "Region";
+}
+
+<h2>RegionalReport</h2>
+
+@{ if (ViewBag.identity == "1")
+    {
+        using (Html.BeginForm("RegionalReport", "Reports", new { id1 = "1" }, FormMethod.Post))
+        {
+            //the following are search options
+            <b> Select Month: </b>
+            @Html.DropDownList("month", new List<SelectListItem>
+                {
+            new SelectListItem { Text = "January", Value = "January" },
+            new SelectListItem { Text = "February", Value = "February" },
+            new SelectListItem { Text = "March", Value = "March" },
+            new SelectListItem { Text = "April", Value = "April" },
+            new SelectListItem { Text = "May", Value = "May" },
+            new SelectListItem { Text = "June", Value = "June" },
+            new SelectListItem { Text = "July", Value = "July" },
+            new SelectListItem { Text = "August", Value = "August" },
+            new SelectListItem { Text = "September", Value = "September" },
+            new SelectListItem { Text = "October", Value = "October" },
+            new SelectListItem { Text = "November", Value = "November" },
+            new SelectListItem { Text = "December", Value = "December" }
+            }, new { id = "month"})
+            <br />
+            <b> Enter the Year in "YYYY" Format </b>
+            @Html.TextBox("Year", null, new { id = "year", required = "required" })
+            <br />
+            <b> Select Region: </b>
+            @Html.DropDownList("region", new List<SelectListItem>
+                {
+                new SelectListItem { Text= "South", Value="South"},
+                new SelectListItem { Text= "South_West", Value="South_West"},
+                new SelectListItem { Text= "North", Value="North"},
+                new SelectListItem { Text= "Central", Value="Central"}
+                }, new { id = "region"})
+            <br />
+            <input type="submit" id = "submit" name="submit" value="Search" />
+        }
+    }
+    else if (ViewBag.identity == "2")
+    {
+        using (Html.BeginForm("RegionalReport", "Reports", new { id1 = "2" }, FormMethod.Post))
+        {
+
+            <b> Enter the Year in "YYYY" Format </b>
+            @Html.TextBox("Year", null, new { id = "year", required = "required" })
+            <br />
+            <b> Select Region: </b>
+            @Html.DropDownList("region", new List<SelectListItem>
+                {
+                new SelectListItem { Text= "South", Value="South"},
+                new SelectListItem { Text= "South_West", Value="South_West"},
+                new SelectListItem { Text= "North", Value="North"},
+                new SelectListItem { Text= "Central", Value="Central"}
+                }, new { id = "region" })
+            <br />
+            <input type="submit" name="submit" value="Search" />
+
+        }
+    }
+    else if (ViewBag.identity == "3")
+    {
+        using (Html.BeginForm("RegionalReport", "Reports", new { id1 = "3" }, FormMethod.Post))
+        {
+            <b> Select Region: </b>
+            @Html.DropDownList("region", new List<SelectListItem>
+                {
+                new SelectListItem { Text= "South", Value="South"},
+                new SelectListItem { Text= "South_West", Value="South_West"},
+                new SelectListItem { Text= "North", Value="North"},
+                new SelectListItem { Text= "Central", Value="Central"}
+                }, new { id = "region" })
+            <br />
+            <input type="submit" name="submit" value="Search" />
+
+        }
+    }
+    else
+    {
+    }
+}

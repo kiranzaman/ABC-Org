@@ -1,0 +1,206 @@
+﻿@model IEnumerable<PRSipl.Models.Datum>
+
+@{
+    ViewBag.Title = "Principal Report";
+}
+
+<h2>Principal Report</h2>
+
+@{ if (ViewBag.identity == "1")
+    {
+        using (Html.BeginForm("PrincipalReport", "Reports", new { id1 = "1" }, FormMethod.Post))
+        {
+            //the following are search options
+            <b> Select Month: </b>
+            @Html.DropDownList("month", new List<SelectListItem>
+                {
+            new SelectListItem { Text = "January", Value = "January" },
+            new SelectListItem { Text = "February", Value = "February" },
+            new SelectListItem { Text = "March", Value = "March" },
+            new SelectListItem { Text = "April", Value = "April" },
+            new SelectListItem { Text = "May", Value = "May" },
+            new SelectListItem { Text = "June", Value = "June" },
+            new SelectListItem { Text = "July", Value = "July" },
+            new SelectListItem { Text = "August", Value = "August" },
+            new SelectListItem { Text = "September", Value = "September" },
+            new SelectListItem { Text = "October", Value = "October" },
+            new SelectListItem { Text = "November", Value = "November" },
+            new SelectListItem { Text = "December", Value = "December" }
+            }, new { id = "month"})
+            <br />
+            <b> Enter the Year in "YYYY" Format </b>
+            @Html.TextBox("Year", null, new { id = "year", required = "required" })
+            <b> Select the Principal</b>
+            @Html.DropDownList("principal", new List<SelectListItem>
+            {
+            new SelectListItem { Text= "None", Value="None"},
+            new SelectListItem { Text= " Nimac", Value=" Nimac"},
+            new SelectListItem { Text= "Fluke", Value="Fluke"},
+            new SelectListItem { Text= "ETS_Solutions", Value="ETS_Solutions"},
+            new SelectListItem { Text= "Fixture_Laser", Value="Fixture_Laser"},
+            new SelectListItem { Text= "UE_Systems", Value="UE_Systems"},
+            new SelectListItem { Text= "SPM_Instruments", Value="SPM_Instruments"},
+            new SelectListItem { Text= "IMR", Value="IMR"},
+            new SelectListItem { Text= "Cook_Compression", Value="Cook_Compression"},
+            new SelectListItem { Text= "Osborn_Engineering", Value="Osborn_Engineering"},
+            new SelectListItem { Text= "USA_Borescopy", Value="USA_Borescopy"},
+            new SelectListItem { Text= "Ronds", Value="Ronds"},
+            new SelectListItem { Text= "GE", Value="GE"},
+            new SelectListItem { Text= "SIUI", Value="SIUI"},
+            new SelectListItem { Text= "FEIN", Value="FEIN"},
+            new SelectListItem { Text= "Misc", Value="Misc"}}, new { id ="principal" })
+            <br />
+            <input type="submit" name="submit" value="Search" />
+        }
+    }
+    else if (ViewBag.identity == "2")
+    {
+        using (Html.BeginForm("PrincipalReport", "Reports", new { id1 = "2" }, FormMethod.Post))
+        {
+
+            <b> Enter the Year in "YYYY" Format </b>
+            @Html.TextBox("Year", null, new { id = "year", required = "required" })
+            <br />
+            <b> Select the Principal</b>
+            @Html.DropDownList("principal", new List<SelectListItem>
+            {
+            new SelectListItem { Text= "None", Value="None"},
+            new SelectListItem { Text= " Nimac", Value=" Nimac"},
+            new SelectListItem { Text= "Fluke", Value="Fluke"},
+            new SelectListItem { Text= "ETS_Solutions", Value="ETS_Solutions"},
+            new SelectListItem { Text= "Fixture_Laser", Value="Fixture_Laser"},
+            new SelectListItem { Text= "UE_Systems", Value="UE_Systems"},
+            new SelectListItem { Text= "SPM_Instruments", Value="SPM_Instruments"},
+            new SelectListItem { Text= "IMR", Value="IMR"},
+            new SelectListItem { Text= "Cook_Compression", Value="Cook_Compression"},
+            new SelectListItem { Text= "Osborn_Engineering", Value="Osborn_Engineering"},
+            new SelectListItem { Text= "USA_Borescopy", Value="USA_Borescopy"},
+            new SelectListItem { Text= "Ronds", Value="Ronds"},
+            new SelectListItem { Text= "GE", Value="GE"},
+            new SelectListItem { Text= "SIUI", Value="SIUI"},
+            new SelectListItem { Text= "FEIN", Value="FEIN"},
+            new SelectListItem { Text= "Misc", Value="Misc"}}, new { id ="principal" })
+            <br />
+            <input type="submit" name="submit" value="Search" />
+        }
+    }
+    else if (ViewBag.identity == "3")
+    {
+        using (Html.BeginForm("PrincipalReport", "Reports", new { id1 = "3" }, FormMethod.Post))
+        {
+            <b> Select the Principal</b>
+            @Html.DropDownList("principal", new List<SelectListItem>
+            {
+            new SelectListItem { Text= "None", Value="None"},
+            new SelectListItem { Text= " Nimac", Value=" Nimac"},
+            new SelectListItem { Text= "Fluke", Value="Fluke"},
+            new SelectListItem { Text= "ETS_Solutions", Value="ETS_Solutions"},
+            new SelectListItem { Text= "Fixture_Laser", Value="Fixture_Laser"},
+            new SelectListItem { Text= "UE_Systems", Value="UE_Systems"},
+            new SelectListItem { Text= "SPM_Instruments", Value="SPM_Instruments"},
+            new SelectListItem { Text= "IMR", Value="IMR"},
+            new SelectListItem { Text= "Cook_Compression", Value="Cook_Compression"},
+            new SelectListItem { Text= "Osborn_Engineering", Value="Osborn_Engineering"},
+            new SelectListItem { Text= "USA_Borescopy", Value="USA_Borescopy"},
+            new SelectListItem { Text= "Ronds", Value="Ronds"},
+            new SelectListItem { Text= "GE", Value="GE"},
+            new SelectListItem { Text= "SIUI", Value="SIUI"},
+            new SelectListItem { Text= "FEIN", Value="FEIN"},
+            new SelectListItem { Text= "Misc", Value="Misc"}}, new { id ="principal" })
+            <br />
+            <input type="submit" id = "submit" name="submit" value="Search" />
+        }
+    }
+    else
+    {
+    }
+}
+<table class="table" id="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+    </tr>
+
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="5"> <h3>Records not found </h3></td>
+        </tr>
+    }
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    <button value="Export" onclick="fnExcelReport();">Export</button>
+    <iframe id="txtArea1" style="display:none"></iframe>
+</div>
+@section scripts{
+    <script>
+        function fnExcelReport() {
+            alert("Downloading file");
+            var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
+            var textRange; var j = 0;
+            tab = document.getElementById('table'); // id of table
+
+            for (j = 0; j < tab.rows.length; j++) {
+                tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+            }
+
+            tab_text = tab_text + "</table>";
+            tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+            tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
+            tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+            {
+                txtArea1.document.open("txt/html", "replace");
+                txtArea1.document.write(tab_text);
+                txtArea1.document.close();
+                txtArea1.focus();
+                sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
+            }
+            else                 //other browser not tested on IE 11
+                sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+            return (sa);
+        }
+    </script>
+}

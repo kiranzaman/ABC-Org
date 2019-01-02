@@ -1,0 +1,248 @@
+﻿@model IEnumerable<PRSipl.Models.Datum>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <button name="exp" value="exp">@Html.ActionLink("Export To Excel File", "ExportListUsingEPPlus", "Data")</button>
+
+</p>
+
+<h4>Add Users via Excel</h4>
+<hr />
+@using (Html.BeginForm("UploadExcel", "Data", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return myFunction()" }))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="control-label col-md-2">Download Format:</div>
+            <div class="col-md-10">
+                <a href="/Data/DownloadExcel/"><img src="~/excel.ico" width="25" height="25" title="Download Excel format" alt="excel" /></a>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <div class="control-label col-md-2">Excel:</div>
+            <div class="col-md-10">
+                <input type="file" id="FileUpload" name="FileUpload" class="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload" id="btnSubmit" class="btn btn-primary" />
+
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("ExportToExcel", "Data", FormMethod.Post))
+{
+    <table class="table" id="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Landline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lead_Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Principal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expected_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Probability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Services)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company, new { name = "ksjdk" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.First_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Last_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Landline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sector)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lead_Source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Principal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Expected_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Probability)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Services)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remarks)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Serial_Number }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Serial_Number }) |
+                    @if (Session["username"].ToString() == "admin")
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Serial_Number })
+                    }
+
+                </td>
+            </tr>
+
+        }
+        <tr>
+
+            <td colspan="4">
+                <br />
+                <br />
+                <input type="submit" value="Export to Excel" class="button" />
+            </td>
+        </tr>
+
+    </table>
+}
+<div>
+    <button value="Export" onclick="fnExcelReport();">Export</button>
+    <iframe id="txtArea1" style="display:none"></iframe>
+</div>
+@section scripts{
+    <script>
+        function fnExcelReport() {
+            alert("Downloading file");
+            var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
+            var textRange; var j = 0;
+            tab = document.getElementById('table'); // id of table
+
+            for (j = 0; j < tab.rows.length; j++) {
+                tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+            }
+
+            tab_text = tab_text + "</table>";
+            tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+            tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
+            tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+            {
+                txtArea1.document.open("txt/html", "replace");
+                txtArea1.document.write(tab_text);
+                txtArea1.document.close();
+                txtArea1.focus();
+                sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
+            }
+            else                 //other browser not tested on IE 11
+                sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+            return (sa);
+        }
+    </script>
+}

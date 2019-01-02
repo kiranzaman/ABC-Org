@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Reports";
+}
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Dropdown Hover CSS -->
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/bootstrap.css" rel="stylesheet">
+
+<h2>Reports</h2>
+<div id = "div1" class="dropdown">
+    <button id = "monthlyreport" class="btn btn-default dropdown-toggle"  type="button" data-toggle="dropdown" data-hover="dropdown">
+        Monthly Report <span class="caret"></span>
+    </button>
+
+
+
+    <ul id = "monthlyreport1" class="dropdown-menu" >
+        <li>@Html.ActionLink("City Report", "City", "Reports", new {@id = "cityreport", id1 = "1" }, null)</li>
+        <li>@Html.ActionLink("Company Report", "Company", "Reports", new { @id = "companyreport", id1 = "1" }, null)</li>
+        <li>@Html.ActionLink("Lead Source Report", "LeadSource", "Reports", new { @id = "leadsourcereport", id1 = "1" }, null)</li>
+        <li>@Html.ActionLink("Name Report", "Name", "Reports", new { @id = "namereport", id1 = "1"},null)</li>
+        <li>@Html.ActionLink("Principal Report", "PrincipalReport", "Reports", new { @id = "pincipalreport", id1 = "1" },null)</li>
+        <li>@Html.ActionLink("Product Report", "Product", "Reports", new { @id = "productreport", id1 = "1" },null)</li>
+        <li>@Html.ActionLink("Sector Report", "Sector", "Reports", new { @id = "sectorreport", id1 = "1" },null)</li>
+        <li>@Html.ActionLink("Regional Report", "Region", "Reports", new {  id = "1" },null)</li>
+    </ul>
+</div>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+        Annual Report <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>@Html.ActionLink("City Report", "City", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Company Report", "Company", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Lead Source Report", "LeadSource", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Name Report", "Name", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Principal Report", "PrincipalReport", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Product Report", "Product", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Sector Report", "Sector", "Reports", new { id1 = "2" }, null)</li>
+        <li>@Html.ActionLink("Regional Report", "Region", "Reports", new { id = "2" }, null)</li>
+    </ul>
+</div>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+        Summary Report <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>@Html.ActionLink("City Report", "City", "Reports", new { id1 = "3" },null)</li>
+        <li>@Html.ActionLink("Company Report", "Company", "Reports", new { id1 = "3" },null)</li>
+        <li>@Html.ActionLink("Lead Source Report", "LeadSource", "Reports", new { id1 = "3" },null)</li>
+        <li>@Html.ActionLink("Name Report", "Name", "Reports", new { id1 = "3"},null)</li>
+        <li>@Html.ActionLink("Principal Report", "PrincipalReport", "Reports", new { id1 = "3" },null)</li>
+        <li>@Html.ActionLink("Product Report", "Product", "Reports", new { id1 = "3" },null)</li>
+        <li>@Html.ActionLink("Sector Report", "Sector", "Reports", new { id1 = "3" },null)</li>
+        <li>@Html.ActionLink("Regional Report", "Region", "Reports", new { id = "3" },null)</li>
+    </ul>
+</div>

@@ -1,0 +1,323 @@
+﻿@model IEnumerable<PRSipl.Models.Datum>
+
+@{
+    ViewBag.Title = "Sector";
+}
+
+<h2>Sector</h2>
+
+@{ if (ViewBag.identity == "1")
+    {
+        using (Html.BeginForm("Sector", "Reports", new { id1 = "1" }, FormMethod.Post))
+        {
+            //the following are search options
+            <b> Select Month: </b>
+            @Html.DropDownList("month", new List<SelectListItem>
+                {
+            new SelectListItem { Text = "January", Value = "January" },
+            new SelectListItem { Text = "February", Value = "February" },
+            new SelectListItem { Text = "March", Value = "March" },
+            new SelectListItem { Text = "April", Value = "April" },
+            new SelectListItem { Text = "May", Value = "May" },
+            new SelectListItem { Text = "June", Value = "June" },
+            new SelectListItem { Text = "July", Value = "July" },
+            new SelectListItem { Text = "August", Value = "August" },
+            new SelectListItem { Text = "September", Value = "September" },
+            new SelectListItem { Text = "October", Value = "October" },
+            new SelectListItem { Text = "November", Value = "November" },
+            new SelectListItem { Text = "December", Value = "December" }
+            }, new { id = "month"})
+            <br />
+            <b> Enter the Year in "YYYY" Format </b>
+            @Html.TextBox("Year", null, new { id = "year", required = "required" })
+            <b> Select the Sector</b>
+            @Html.DropDownList("sector", new List<SelectListItem>
+            {
+                new SelectListItem { Text= "None", Value="None"},
+                new SelectListItem { Text= "Power", Value="Power"},
+                new SelectListItem { Text= "Fertilizer", Value="Fertilizer"},
+                new SelectListItem { Text= "Polymer_and_Chemical", Value="Polymer_and_Chemical"},
+                new SelectListItem { Text= "Cement", Value="Cement"},
+                new SelectListItem { Text= "Food_and_Beverages", Value="Food_and_Beverages"},
+                new SelectListItem { Text= "Oil_and_Gas", Value="Oil_and_Gas"},
+                new SelectListItem { Text= "Sugar", Value="Sugar"},
+                new SelectListItem { Text= "Atomic", Value="Atomic"},
+                new SelectListItem { Text= "Reseacrch_and_Development", Value="Reseacrch_and_Development"},
+                new SelectListItem { Text= "Ceramics", Value="Ceramics"},
+                new SelectListItem { Text= "Automobile", Value="Automobile"},
+                new SelectListItem { Text= "Paper", Value="Paper"},
+                new SelectListItem { Text= "Paint", Value="Paint"},
+                new SelectListItem { Text= "Sugar", Value=""},
+                new SelectListItem { Text= "Steel", Value="Steel"},
+                new SelectListItem { Text= "Textile", Value="Textile"},
+                new SelectListItem { Text= "Bottling", Value="Bottling"},
+                new SelectListItem { Text= "Fundry", Value="Fundry"},
+                new SelectListItem { Text= "Plastic", Value="Plastic"}}, new { id= "sector"})
+            <br />
+            <input type="submit" id = "submit" name="submit" value="Search" />
+        }
+    }
+    else if (ViewBag.identity == "2")
+    {
+        using (Html.BeginForm("Sector", "Reports", new { id1 = "2" }, FormMethod.Post))
+        {
+
+            <b> Enter the Year in "YYYY" Format </b>
+            @Html.TextBox("Year", null, new { id = "year", required = "required" })
+            <br />
+            <b> Select the Sector</b>
+            @Html.DropDownList("sector", new List<SelectListItem>
+            {
+                new SelectListItem { Text= "None", Value="None"},
+                new SelectListItem { Text= "Power", Value="Power"},
+                new SelectListItem { Text= "Fertilizer", Value="Fertilizer"},
+                new SelectListItem { Text= "Polymer_and_Chemical", Value="Polymer_and_Chemical"},
+                new SelectListItem { Text= "Cement", Value="Cement"},
+                new SelectListItem { Text= "Food_and_Beverages", Value="Food_and_Beverages"},
+                new SelectListItem { Text= "Oil_and_Gas", Value="Oil_and_Gas"},
+                new SelectListItem { Text= "Sugar", Value="Sugar"},
+                new SelectListItem { Text= "Atomic", Value="Atomic"},
+                new SelectListItem { Text= "Reseacrch_and_Development", Value="Reseacrch_and_Development"},
+                new SelectListItem { Text= "Ceramics", Value="Ceramics"},
+                new SelectListItem { Text= "Automobile", Value="Automobile"},
+                new SelectListItem { Text= "Paper", Value="Paper"},
+                new SelectListItem { Text= "Paint", Value="Paint"},
+                new SelectListItem { Text= "Sugar", Value=""},
+                new SelectListItem { Text= "Steel", Value="Steel"},
+                new SelectListItem { Text= "Textile", Value="Textile"},
+                new SelectListItem { Text= "Bottling", Value="Bottling"},
+                new SelectListItem { Text= "Fundry", Value="Fundry"},
+                new SelectListItem { Text= "Plastic", Value="Plastic"}}, new { id= "sector"})
+            <br />
+            <input type="submit" name="submit" value="Search" />
+        }
+    }
+    else if (ViewBag.identity == "3")
+    {
+        using (Html.BeginForm("Sector", "Reports", new { id1 = "3" }, FormMethod.Post))
+        {
+            <b> Select the Sector</b>
+            @Html.DropDownList("sector", new List<SelectListItem>
+            {
+                new SelectListItem { Text= "None", Value="None"},
+                new SelectListItem { Text= "Power", Value="Power"},
+                new SelectListItem { Text= "Fertilizer", Value="Fertilizer"},
+                new SelectListItem { Text= "Polymer_and_Chemical", Value="Polymer_and_Chemical"},
+                new SelectListItem { Text= "Cement", Value="Cement"},
+                new SelectListItem { Text= "Food_and_Beverages", Value="Food_and_Beverages"},
+                new SelectListItem { Text= "Oil_and_Gas", Value="Oil_and_Gas"},
+                new SelectListItem { Text= "Sugar", Value="Sugar"},
+                new SelectListItem { Text= "Atomic", Value="Atomic"},
+                new SelectListItem { Text= "Reseacrch_and_Development", Value="Reseacrch_and_Development"},
+                new SelectListItem { Text= "Ceramics", Value="Ceramics"},
+                new SelectListItem { Text= "Automobile", Value="Automobile"},
+                new SelectListItem { Text= "Paper", Value="Paper"},
+                new SelectListItem { Text= "Paint", Value="Paint"},
+                new SelectListItem { Text= "Sugar", Value=""},
+                new SelectListItem { Text= "Steel", Value="Steel"},
+                new SelectListItem { Text= "Textile", Value="Textile"},
+                new SelectListItem { Text= "Bottling", Value="Bottling"},
+                new SelectListItem { Text= "Fundry", Value="Fundry"},
+                new SelectListItem { Text= "Plastic", Value="Plastic"}}, new { id= "sector"})
+            <br />
+            <input type="submit" name="submit" value="Search" />
+        }
+    }
+    else
+    {
+    }
+}
+<table class="table" id="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Landline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sector)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lead_Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Principal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expected_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Probability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Services)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+    </tr>
+
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="5"> <h3>Records not found </h3></td>
+        </tr>
+    }
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Landline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Lead_Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Principal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expected_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Probability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Services)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div>
+    <button value="Export" onclick="fnExcelReport();">Export</button>
+    <iframe id="txtArea1" style="display:none"></iframe>
+</div>
+@section scripts{
+    <script>
+        function fnExcelReport() {
+            alert("Downloading file");
+            var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
+            var textRange; var j = 0;
+            tab = document.getElementById('table'); // id of table
+
+            for (j = 0; j < tab.rows.length; j++) {
+                tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+            }
+
+            tab_text = tab_text + "</table>";
+            tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+            tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
+            tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+            {
+                txtArea1.document.open("txt/html", "replace");
+                txtArea1.document.write(tab_text);
+                txtArea1.document.close();
+                txtArea1.focus();
+                sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
+            }
+            else                 //other browser not tested on IE 11
+                sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+            return (sa);
+        }
+    </script>
+}

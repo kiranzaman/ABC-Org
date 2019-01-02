@@ -1,0 +1,28 @@
+﻿@model PRSipl.Models.User
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 id = "h1">Welcome To ABC Org</h1>
+    <button id = "button1" name="viewdata" value="viewdata">@Html.ActionLink("View Data", "Index", "Data")</button>
+    <button id = "button2" name="insertdata" value="viewdata">@Html.ActionLink("Insert Data", "Create", "Data")</button>
+
+    <button id = "button3" name="viewreport" value="viewdata">@Html.ActionLink("View Report", "Index", "Reports")</button>
+
+    <button id = "button4" name="search" value="search">@Html.ActionLink("Search", "Search", "Data")</button>
+
+    <br>
+    <br>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+
+@if (@ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            $(function () {
+                alert("@ViewBag.Message")
+            });
+    </script>
+}

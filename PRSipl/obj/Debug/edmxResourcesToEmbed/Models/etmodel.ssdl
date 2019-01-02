@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Data">
+    <Key>
+      <PropertyRef Name="Serial Number" />
+    </Key>
+    <Property Name="Serial Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="varchar(max)" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="City" Type="varchar(max)" />
+    <Property Name="First Name" Type="varchar(max)" />
+    <Property Name="Last Name" Type="varchar(max)" />
+    <Property Name="Mobile Number" Type="varchar(max)" />
+    <Property Name="Landline" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Sector" Type="varchar(max)" />
+    <Property Name="Lead Source" Type="varchar(max)" />
+    <Property Name="Region" Type="varchar(max)" />
+    <Property Name="Product" Type="varchar(max)" />
+    <Property Name="Principal" Type="varchar(max)" />
+    <Property Name="Designation" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Expected Date" Type="date" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="Probability" Type="varchar(max)" />
+    <Property Name="Services" Type="varchar(max)" />
+    <Property Name="Fax" Type="varchar(max)" />
+    <Property Name="Remarks" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
